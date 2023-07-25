@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentines Card</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@500&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="card-container">
+        <div class="letter-card-cover">
+            <div class="cover"></div>
+            <div class="letter">
+                <img src="arrow-through-heart-fill.svg" alt="">
+                <h1>HAPPY VALENTINES DAY!!</h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("mousemove",function(z){
+            let container = document.querySelector("body");
+            let heart = document.createElement("span");
+            let xBehavior = z.offsetX;
+            let yBehavior = z.offsetY;
+            heart.style.left = xBehavior+'px';
+            heart.style.top = yBehavior+'px';
+
+            let change = Math.random() * 150;
+            setTimeout(function(){
+              heart.style.height = change+'px';
+              heart.style.width = change+'px';
+            },200);   
+
+            container.appendChild(heart);
+            setTimeout(function(){
+                heart.remove();
+            },2500);
+        })
+    </script>
+</body>
+</html>
